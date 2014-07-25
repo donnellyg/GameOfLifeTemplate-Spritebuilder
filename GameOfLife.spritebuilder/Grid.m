@@ -101,7 +101,6 @@ static const int GRID_COLUMNS = 10;
                         Creature *neighbor = _gridArray[x][y];
                         if (neighbor.isAlive) {
                             creature.livingNeighbors++;
-                            ln++;
                         }
                         //NSLog(@"Neighbor Alive!");
                     }
