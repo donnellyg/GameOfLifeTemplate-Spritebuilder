@@ -120,10 +120,10 @@ static const int GRID_COLUMNS = 10;
             if (nn == 2 || nn == 3) {
                 [creature setIsAlive:YES];
                 NSLog(@"Creature Alive!");
-                return;
+            } else {
+                [creature setIsAlive:NO];
+                NSLog(@"Creature Dead");
             }
-            [creature setIsAlive:NO];
-            NSLog(@"Creature Dead");
             
         }
     }
