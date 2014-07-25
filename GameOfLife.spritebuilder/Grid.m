@@ -88,18 +88,23 @@ static const int GRID_COLUMNS = 10;
 
 
 - (void) countNeighbors{
+    int ln;
     for (int i = 0; i < GRID_ROWS; i++){
         
         for (int j = 0; j < GRID_COLUMNS; j++){
             Creature *creature = _gridArray[i][j];
             creature.livingNeighbors = 0;
+            ln = 0;
             
             //iterate over surrounding creatures
             for (int x = (i - 1); x <= (i + 1); x++){
                 for (int y = (j - 1); y <= (j + 1); y++){
                     if ([self isValidPositionForX:x andY:y]){
                         Creature *neighbor = _gridArray[x][y];
-                        if (neighbor.isAlive) creature.livingNeighbors++;
+                        if (neighbor.isAlive) {
+                            creature.livingNeighbors++;
+                            ln++;
+                        }
                         //NSLog(@"Neighbor Alive!");
                     }
                 }
@@ -107,7 +112,7 @@ static const int GRID_COLUMNS = 10;
             
         }
     }
-    
+    NSLog([NSString stringWithFormat:@"Number of Neighbors: %d", ln]);
 }
 
 
