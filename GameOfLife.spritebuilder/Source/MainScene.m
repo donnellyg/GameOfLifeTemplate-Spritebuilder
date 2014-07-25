@@ -33,7 +33,9 @@
 }
 
 - (void) reset{
+    [self pause];
     [Grid resetGrid:_grid];
+    
 }
 
 - (void) step {
