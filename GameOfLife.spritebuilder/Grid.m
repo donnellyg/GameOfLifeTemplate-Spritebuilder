@@ -88,13 +88,11 @@ static const int GRID_COLUMNS = 10;
 
 
 - (void) countNeighbors{
-    int ln;
     for (int i = 0; i < GRID_ROWS; i++){
         
         for (int j = 0; j < GRID_COLUMNS; j++){
             Creature *creature = _gridArray[i][j];
             creature.livingNeighbors = 0;
-            ln = 0;
             
             //iterate over surrounding creatures
             for (int x = (i - 1); x <= (i + 1); x++){
@@ -108,11 +106,12 @@ static const int GRID_COLUMNS = 10;
                         //NSLog(@"Neighbor Alive!");
                     }
                 }
+                
             }
-            
+            NSLog([NSString stringWithFormat:@"Number of Neighbors: %d", creature.livingNeighbors]);
         }
     }
-    NSLog([NSString stringWithFormat:@"Number of Neighbors: %d", ln]);
+    
 }
 
 
