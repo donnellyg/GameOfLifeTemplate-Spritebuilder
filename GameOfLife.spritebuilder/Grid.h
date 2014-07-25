@@ -13,7 +13,7 @@
 @property (nonatomic, assign) int totalAlive;
 @property (nonatomic, assign) int generaton;
 
-
-
+-(void) onEnter;
+- (void) setupGrid;
 
 @end
