@@ -131,7 +131,7 @@ static const int GRID_COLUMNS = 10;
 
 
 - (BOOL) isValidPositionForX:(int)x andY:(int)y{
-    return (x > 0 && x < GRID_ROWS) && (y > 0 && y > GRID_COLUMNS);
+    return (x > 0 && x < GRID_ROWS) && (y > 0 && y < GRID_COLUMNS);
 }
 
 
