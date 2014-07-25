@@ -32,6 +32,10 @@
     [self unschedule:@selector(step)];
 }
 
+- (void) reset{
+    [Grid resetGrid:_grid];
+}
+
 - (void) step {
     
     [_grid evolveStep];

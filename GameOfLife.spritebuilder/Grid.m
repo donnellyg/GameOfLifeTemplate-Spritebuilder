@@ -130,7 +130,14 @@ static const int GRID_COLUMNS = 10;
     
 }
 
-
++ (void) resetGrid:(Grid*)g{
+    for (int i = 0; i < GRID_ROWS; i++){
+        for (int j = 0; j < GRID_COLUMNS; j++){
+            Creature *creature = g->_gridArray[i][j];
+            creature.isAlive = NO;
+        }
+    }
+}
 
 
 - (BOOL) isValidPositionForX:(int)x andY:(int)y{

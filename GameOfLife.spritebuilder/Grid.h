@@ -19,5 +19,6 @@
 - (void) countNeighbors;
 - (void) updateCreatures;
 - (BOOL) isValidPositionForX:(int)x andY:(int)y;
++ (void) resetGrid:(Grid*)g;
 
 @end
