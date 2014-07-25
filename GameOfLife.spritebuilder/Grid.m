@@ -125,9 +125,13 @@ static const int GRID_COLUMNS = 10;
                 if (nn == 2 || nn == 3) {
                     [creature setIsAlive:YES];
                     //NSLog(@"Creature Alive!");
-                } else [creature setIsAlive:NO];
+                } else {
+                    _totalAlive --;
+                    [creature setIsAlive:NO];
+                }
             } else if (nn == 3)   {
                 [creature setIsAlive:YES];
+                _totalAlive++;
                 //NSLog(@"Creature Dead");
             } else [creature setIsAlive:NO];
             
