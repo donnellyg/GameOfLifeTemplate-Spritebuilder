@@ -1,6 +1,5 @@
 #import "Grid.h"
 #import "Creature.h"
-#import "GCPoint.h"
 
 // these are variables that cannot be changed
 static const int GRID_ROWS = 8;
@@ -59,7 +58,7 @@ static const int GRID_COLUMNS = 10;
 
 - (void) touchBegan:(UITouch *)touch withEvent:(UIEvent *)event{
     
-    GCPoint touchLocation = [touch locationInNode:self]; //get x,y coordinates of touch
+    CGPoint touchLocation = [touch locationInNode:self]; //get x,y coordinates of touch
     
     Creature *creature = [self creatureForTouchPosition:touchLocation];
     
