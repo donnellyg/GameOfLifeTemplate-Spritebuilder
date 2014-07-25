@@ -63,6 +63,8 @@ static const int GRID_COLUMNS = 10;
     Creature *creature = [self creatureForTouchPosition:touchLocation];
     
     creature.isAlive = !creature.isAlive; //change state of living
+    if (creature.isAlive) _totalAlive++;
+    else _totalAlive--;
     
     
 }
