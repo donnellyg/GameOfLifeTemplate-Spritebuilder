@@ -1,5 +1,6 @@
 #import "Grid.h"
 #import "Creature.h"
+#import "GCPoint.h"
 
 // these are variables that cannot be changed
 static const int GRID_ROWS = 8;
