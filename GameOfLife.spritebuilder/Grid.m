@@ -107,7 +107,7 @@ static const int GRID_COLUMNS = 10;
                 }
                 
             }
-            creature.livingNeighbors--; // do not count self as a neighbor!!!!
+            if (creature.isAlive) creature.livingNeighbors--; // do not count self as a neighbor!!!!
             NSLog([NSString stringWithFormat:@"Number of Neighbors: %d", creature.livingNeighbors]);
         }
     }
