@@ -11,9 +11,13 @@
 @interface Grid : CCSprite
 
 @property (nonatomic, assign) int totalAlive;
-@property (nonatomic, assign) int generaton;
+@property (nonatomic, assign) int generation;
 
 - (void) onEnter;
 - (void) setupGrid;
+- (void) evolveStep;
+- (void) countNeighbors;
+- (void) updateCreatures;
+- (BOOL) isValidPositionForX:(int)x andY:(int)y;
 
 @end
