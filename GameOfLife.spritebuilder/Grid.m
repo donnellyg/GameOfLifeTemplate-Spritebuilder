@@ -100,7 +100,7 @@ static const int GRID_COLUMNS = 10;
                     if ([self isValidPositionForX:x andY:y]){
                         Creature *neighbor = _gridArray[x][y];
                         if (neighbor.isAlive) creature.livingNeighbors++;
-                        NSLog(@"Neighbor Alive!");
+                        //NSLog(@"Neighbor Alive!");
                     }
                 }
             }
@@ -117,13 +117,15 @@ static const int GRID_COLUMNS = 10;
             Creature *creature = _gridArray[i][j];
             int nn = creature.livingNeighbors;
             
-            if (nn == 2 || nn == 3) {
+            if (creature.isAlive) {
+                if (nn == 2 || nn == 3) {
+                    [creature setIsAlive:YES];
+                    //NSLog(@"Creature Alive!");
+                } else [creature setIsAlive:NO];
+            } else if (nn == 3)   {
                 [creature setIsAlive:YES];
-                NSLog(@"Creature Alive!");
-            } else {
-                [creature setIsAlive:NO];
-                NSLog(@"Creature Dead");
-            }
+                //NSLog(@"Creature Dead");
+            } else [creature setIsAlive:NO];
             
         }
     }
