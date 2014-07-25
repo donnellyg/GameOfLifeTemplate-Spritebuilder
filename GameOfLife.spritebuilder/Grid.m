@@ -131,6 +131,7 @@ static const int GRID_COLUMNS = 10;
 }
 
 + (void) resetGrid:(Grid*)g{
+    g.generation = 0;
     for (int i = 0; i < GRID_ROWS; i++){
         for (int j = 0; j < GRID_COLUMNS; j++){
             Creature *creature = g->_gridArray[i][j];
